@@ -5,11 +5,11 @@ if [[ ! -f $bbwDir/xfms/BigBrain-to-ICBM2009sym-nonlin_grid_2.mnc ]] ; then
 	cd $bbwDir/xfms/
 	wget --no-check-certificate --content-disposition "https://fz-juelich.sciebo.de/s/pFu9XfNonT65HpS/download"
 	unzip BigBrainWarp.zip
+        rm BigBrainWarp.zip
 	mv BigBrainWarp/mni_icbm152_t1_tal_nlin_sym_09c_mask.mnc $bbwDir/spaces/tpl-icbm/tpl-icbm_desc-t1_tal_nlin_sym_09c_mask.mnc
+	unzip BigBrainWarp/BigBrain-to-ICBM2009sym-nonlin.zip
 	cp BigBrain-to-ICBM2009sym-nonlin/* $bbwDir/xfms/
-	rm BigBrainWarp.zip
 	rm -rf BigBrainWarp
-	rm BigBrain-to-ICBM2009sym-nonlin.zip
 	rm -rf BigBrain-to-ICBM2009sym-nonlin
 fi
 
